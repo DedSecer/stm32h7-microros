@@ -94,7 +94,7 @@
 extern USBD_CDC_ItfTypeDef USBD_Interface_fops_HS;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
-
+extern USBD_HandleTypeDef hUsbDeviceHS;
 /* USER CODE END EXPORTED_VARIABLES */
 
 /**

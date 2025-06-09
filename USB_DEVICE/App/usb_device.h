@@ -63,7 +63,6 @@
  * -- Insert your variables declaration here --
  */
 /* USER CODE BEGIN VARIABLES */
-
 /* USER CODE END VARIABLES */
 /**
   * @}
