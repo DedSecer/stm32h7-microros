@@ -34,6 +34,7 @@
 #include <rmw_microxrcedds_c/config.h>
 #include <rmw_microros/rmw_microros.h>
 #include <std_msgs/msg/int32.h>
+#include <std_msgs/msg/string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -157,7 +158,9 @@ void StartDefaultTask(void *argument)
   // micro-ROS app
 
   rcl_publisher_t publisher;
+  rcl_publisher_t hello_publisher;
   std_msgs__msg__Int32 msg;
+  std_msgs__msg__String string_msg;
   rclc_support_t support;
   rcl_allocator_t allocator;
   rcl_node_t node;
@@ -175,13 +178,21 @@ void StartDefaultTask(void *argument)
     &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
     "cubemx_publisher");
+  rclc_publisher_init_default(
+  &hello_publisher,
+  &node,
+  ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, String),
+  "hello_publisher");
 
   msg.data = 0;
+  string_msg.data.data = "hello";
+  string_msg.data.size = strlen(string_msg.data.data);
 
   /* Infinite loop */
   for(;;)
   {
     rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
+    rcl_ret_t ret2 = rcl_publish(&hello_publisher, &string_msg, NULL);
     if (ret != RCL_RET_OK)
     {
       printf("Error publishing (line %d)\n", __LINE__);
