@@ -1,2 +1,9 @@
-cmake-build-debug*
+.vscode/
+cmake-build-debug/
+.idea/
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+build.ninja
 .DS_Store
+build/
