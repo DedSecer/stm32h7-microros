@@ -43,10 +43,10 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
 )
 set(microros
-        ${PROJECT_SOURCE_DIR}/Lib_Microros/Src/custom_memory_manager.c
-        ${PROJECT_SOURCE_DIR}/Lib_Microros/Src/microros_allocators.c
-        ${PROJECT_SOURCE_DIR}/Lib_Microros/Src/microros_time.c
-        ${PROJECT_SOURCE_DIR}/Lib_Microros/Src/microros_transports/usb_cdc_transport.c
+        ${PROJECT_SOURCE_DIR}/Lib_Microros/extra_sources/custom_memory_manager.c
+        ${PROJECT_SOURCE_DIR}/Lib_Microros/extra_sources/microros_allocators.c
+        ${PROJECT_SOURCE_DIR}/Lib_Microros/extra_sources/microros_time.c
+        ${PROJECT_SOURCE_DIR}/Lib_Microros/extra_sources/microros_transports/usb_cdc_transport.c
 )
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
